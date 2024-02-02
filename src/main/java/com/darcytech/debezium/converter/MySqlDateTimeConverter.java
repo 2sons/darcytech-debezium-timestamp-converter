@@ -139,7 +139,6 @@ public class MySqlDateTimeConverter implements CustomConverter<SchemaBuilder, Re
             return null;
         }
         if (input instanceof ZonedDateTime) {
-            // mysql的timestamp会转成UTC存储，这里的zonedDatetime都是UTC时间
             ZonedDateTime zonedDateTime = (ZonedDateTime) input;
             LocalDateTime localDateTime = zonedDateTime.withZoneSameInstant(timestampZoneId).toLocalDateTime();
             return timestampFormatter.format(localDateTime);
@@ -149,8 +148,6 @@ public class MySqlDateTimeConverter implements CustomConverter<SchemaBuilder, Re
     }
 
     /**
-     * 将 Date 转为 LocalDateTime
-     *
      * @param date
      * @return java.time.LocalDateTime;
      */
