@@ -25,7 +25,7 @@ public class MySqlDateTimeConverter implements CustomConverter<SchemaBuilder, Re
     private static final String DEFAULT_DATE = "yyyy-MM-dd";
     private static final String DEFAULT_TIME = "HH:mm:ss";
     private static final String DEFAULT_DATETIME = "yyyy-MM-dd HH:mm:ss";
-    private static final String DEFAULT_TIMESTAMP_ZONE = "UTC+8";
+    private static final String DEFAULT_TIMESTAMP_ZONE = "UTC+9";
 
     @Override
     public void configure(Properties props) {
